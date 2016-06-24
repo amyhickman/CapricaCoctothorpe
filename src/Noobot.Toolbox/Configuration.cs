@@ -18,11 +18,14 @@ namespace Noobot.Toolbox
             UseMiddleware<FlickrMiddleware>();
             UseMiddleware<CalculatorMiddleware>();
             UseMiddleware<PaniniMiddleware>();
-            
+            UseMiddleware<WebQueryMiddleware>();
+            UseMiddleware<LearnMiddleware>();
+            UseMiddleware<StopMiddleware>();
             UsePlugin<StoragePlugin>();
             UsePlugin<SchedulePlugin>();
             UsePlugin<AdminPlugin>();
             UsePlugin<PingPlugin>();
+            UsePlugin<LearnPlugin>();
         }
     }
 }

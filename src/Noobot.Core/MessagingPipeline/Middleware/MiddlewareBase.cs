@@ -79,5 +79,15 @@ namespace Noobot.Core.MessagingPipeline.Middleware
                 yield return commandDescription;
             }
         }
+
+        public List<string> GetActiveCommands ()
+        {
+           var Commands = new List<string>();
+           HandlerMappings.ToList().ForEach(x =>
+           {
+               Commands.AddRange(x.ValidHandles);
+           });
+           return Commands;
+        }
     }
 }

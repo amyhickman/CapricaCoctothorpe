@@ -19,6 +19,7 @@ namespace Noobot.Core.MessagingPipeline.Request.Extensions
                 $"<@{incomingMessage.BotId}>",
                 $"@{incomingMessage.BotName}:",
                 $"@{incomingMessage.BotName}",
+                "!!",
             };
 
             string handle = myNames.FirstOrDefault(x => messageText.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));

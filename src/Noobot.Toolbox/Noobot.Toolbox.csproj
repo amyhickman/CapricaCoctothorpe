@@ -65,6 +65,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +86,9 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="Pipeline\Middleware\AdminMiddleware.cs" />
     <Compile Include="Pipeline\Middleware\AutoResponderMiddleware.cs" />
+    <Compile Include="Pipeline\Middleware\LearnMiddleWare.cs" />
+    <Compile Include="Pipeline\Middleware\StopMiddleware.cs" />
+    <Compile Include="Pipeline\Middleware\WebQueryMiddleware.cs" />
     <Compile Include="Pipeline\Middleware\PaniniMiddleware.cs" />
     <Compile Include="Pipeline\Middleware\FlickrMiddleware.cs" />
     <Compile Include="Pipeline\Middleware\JokeMiddleware.cs" />
@@ -93,6 +98,7 @@
     <Compile Include="Pipeline\Middleware\WelcomeMiddleware.cs" />
     <Compile Include="Pipeline\Middleware\YieldTestMiddleware.cs" />
     <Compile Include="Plugins\AdminPlugin.cs" />
+    <Compile Include="Plugins\LearnPlugin.cs" />
     <Compile Include="Plugins\PingPlugin.cs" />
     <Compile Include="Plugins\SchedulePlugin.cs" />
     <Compile Include="Plugins\StoragePlugin.cs" />
