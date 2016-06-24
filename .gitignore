@@ -47,5 +47,5 @@ Temporary Items
 .apdisk
 
 *\config.json
-*\bin\Debug\*
-src/Noobot.Toolbox/bin/Debug/Noobot.Core.dll
+*/bin/Debug/*
+src/*/bin/Debug/*
