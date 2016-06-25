@@ -72,21 +72,15 @@ namespace Noobot.Toolbox.Pipeline.Middleware
             _statsPlugin.IncrementState("Urban");
 
             var searchText = message.TargetedText.ToLower().ReplaceFirst("urban ", "").Trim();
-            var result = "";
+            var result = "Something went on fire!";
 
-            try
-            {
-                var jsonStr = new WebClient().DownloadString(@"http://api.urbandictionary.com/v0/define?term=" + HttpUtility.UrlEncode(searchText));
-                var definition = JObject.Parse(jsonStr)["list"][0]["definition"];
-                result = definition.Value<string>();
-            }
-            catch (Exception ex)
-            {
-            }
+            var jsonStr = new WebClient().DownloadString(@"http://api.urbandictionary.com/v0/define?term=" + HttpUtility.UrlEncode(searchText));
+            var definition = JObject.Parse(jsonStr)["list"][0]["definition"];
+            result = definition.Value<string>();
 
             if (!string.IsNullOrEmpty(result))
             {
-                yield return message.ReplyToChannel($"`{searchText}` - {result}");
+                yield return message.ReplyToChannel($"`<http://www.urbandictionary.com/define.php?term={HttpUtility.UrlEncode(searchText)}|{searchText}>` - {result}");
             }
             else
             {

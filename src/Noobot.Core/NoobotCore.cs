@@ -124,6 +124,14 @@ namespace Noobot.Core
             }
             catch (Exception ex)
             {
+                try
+                {
+                    await SendMessage(incomingMessage.ReplyToChannel($"@{incomingMessage.Username} Uh Oh! Something went on fire!"));
+                }
+                catch
+                {
+                    _log.Log("Unable to send error code to chat");
+                }
                 _log.Log($"ERROR WHILE PROCESSING MESSAGE: {ex}");
             }
 
