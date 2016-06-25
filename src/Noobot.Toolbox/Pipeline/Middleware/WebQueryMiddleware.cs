@@ -52,19 +52,13 @@ namespace Noobot.Toolbox.Pipeline.Middleware
 
             var response = "";
 
-            if (data == null)
-            {
-                yield return message.ReplyToChannel("Something went on fire!");
-            }
-            else
-            {
-                data.Items.Take(5).ToList().ForEach(x =>
-                {
-                    response +=  "<" + x.Links.First().GetAbsoluteUri() + "|" + x.Title.Text.Replace("<", "&lt;").Replace(">","&gt;").Replace(" - msdn.microsoft.com", "") + ">\r\n";
-                });
 
-                yield return message.ReplyToChannel(response);
-            }
+            data.Items.Take(5).ToList().ForEach(x =>
+            {
+                response +=  "<" + x.Links.First().GetAbsoluteUri() + "|" + x.Title.Text.Replace("<", "&lt;").Replace(">","&gt;").Replace(" - msdn.microsoft.com", "") + ">\r\n";
+            });
+
+            yield return message.ReplyToChannel(response);
         }
 
         private IEnumerable<ResponseMessage> Urban(IncomingMessage message, string matchedHandle)
